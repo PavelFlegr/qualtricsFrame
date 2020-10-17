@@ -16,9 +16,14 @@ function discover() {
 function handshake(e) {
 	if(!(e.origin === origin && e.data === "pong")) return
 	window.removeEventListener("message", handshake)
+	window.addEventListener("message", handler)
 	targetwindow = e.source
 	sendUpdate()
 	
+}
+
+function handler(e) {
+	sendUpdate()
 }
 
 function sendUpdate() {
