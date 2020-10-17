@@ -7,5 +7,5 @@ function handler(e) {
 
 function register(f) {
   frame = f
+  window.addEventListener("message", handler)
 }
-window.addEventListener("message", handler)
