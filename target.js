@@ -1,5 +1,6 @@
 addEventListener("resize", () => {
-	postMessage(document.documentElement.scrollHeight, "*")
+	console.log("resize")
+	parent.postMessage(document.documentElement.scrollHeight, "*")
 })
 
-postMessage(document.documentElement.scrollHeight, "*")
+parent.postMessage(document.documentElement.scrollHeight, "*")
