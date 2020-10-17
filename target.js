@@ -22,8 +22,7 @@ function handshake(e) {
 }
 
 function sendUpdate() {
-	console.log(document.documentElement.clientHeight)
-	console.log(window.innerHeight)
+	console.log(window)
 	targetwindow.postMessage(document.documentElement.clientHeight, origin)
 }
 
