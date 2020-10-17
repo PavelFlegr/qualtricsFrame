@@ -8,4 +8,4 @@ function handler(e) {
 function register(f) {
   frame = f
 }
-window.addEventHandler("message", handler)
+window.addEventListener("message", handler)
