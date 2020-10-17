@@ -27,6 +27,7 @@ function handler(e) {
 }
 
 function sendUpdate() {
+	console.log(window)
 	targetwindow.postMessage(document.documentElement.scrollHeight, origin)
 }
 
