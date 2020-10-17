@@ -22,6 +22,7 @@ function handshake(e) {
 }
 
 function sendUpdate() {
+	console.log("test")
 	targetwindow.postMessage("hello", origin)
 }
 
