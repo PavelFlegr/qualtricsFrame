@@ -15,7 +15,7 @@ function discover() {
 
 function handshake(e) {
 	if(!(e.origin === origin && e.data === "pong")) return
-	window.removeEventListener(handshake, false)
+	window.removeEventListener("message", handshake)
 	targetwindow = e.source
 	sendUpdate()
 	
