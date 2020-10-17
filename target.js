@@ -26,6 +26,6 @@ function sendUpdate() {
 	targetwindow.postMessage(document.documentElement.clientHeight, origin)
 }
 
-window.onload=() => console.log("loaded"+window)
+window.onload=() => console.log([window.innerHeight, document.documentElement.clientHeight])
 
 register(origin)
