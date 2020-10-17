@@ -3,8 +3,8 @@ let targetwindow
 let w = window
 let i
 function register() {
-	i = setInterval(discover, 0)
 	window.addEventListener("message", handshake)
+	i = setInterval(discover, 0)
 }
 
 function discover() {
