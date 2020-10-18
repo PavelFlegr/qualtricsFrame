@@ -15,7 +15,9 @@ function* traverseFrames(frame) {
 }
 
 function emit(message, data = null, targetOrigin = "*", transfer = []) {
-  forEach(traverseFrames(top).next(), f => f.postMessage({message, data}, targetOrigin, transfer))
+	gen = traverseFrames(top)
+	gen.next()
+  forEach(gen, f => f.postMessage({message, data}, targetOrigin, transfer))
 }
 
 function subscribe(message, callback) {
