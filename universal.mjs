@@ -29,6 +29,7 @@ function unsubscribe(message) {
 }
 
 function messageHandler(e) {
+	console.log(e)
 	if(subscriptions.has(e.data.message) && e.data.scope === _scope) subscriptions.get(e.data.message)(e)
 }
 
