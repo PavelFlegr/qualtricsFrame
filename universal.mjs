@@ -3,7 +3,7 @@ let subscriptions = new Map()
 addEventListener("message", messageHandler)
 
 function forEach(generator, callback) {
-	for(item of generator) {
+	for(let item of generator) {
   	callback(item)
   }
 }
