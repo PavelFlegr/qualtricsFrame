@@ -9,13 +9,13 @@ function forEach(generator, callback) {
 }
 function* traverseFrames(frame) {
   for (let i = 0; i < frame.length;i++) {
-		yield* traverseFrames(frame.frames[i])
-    yield frame.frames[i]
+	yield frame.frames[i]
+	yield* traverseFrames(frame.frames[i])
   }
 }
 
 function emit(message, data = null, targetOrigin = "*", transfer = []) {
-  forEach(traverseFrames(top), f => f.postMessage({message, data}, targetOrigin, transfer))
+  forEach(traverseFrames(top).next(), f => f.postMessage({message, data}, targetOrigin, transfer))
 }
 
 function subscribe(message, callback) {
