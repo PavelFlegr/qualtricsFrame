@@ -27,7 +27,7 @@ function unsubscribe(message) {
 }
 
 function messageHandler(e) {
-	if(subscriptions.has(e.data.message)) subscriptions[e.data.message]({data: e.data, ...e})
+	if(subscriptions.has(e.data.message)) subscriptions.get(e.data.message)({data: e.data.data, ...e})
 }
 
 export {emit, subscribe, unsubscribe}
