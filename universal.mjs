@@ -9,8 +9,8 @@ function forEach(generator, callback) {
 }
 function* traverseFrames(frame) {
   for (let i = 0; i < frame.length;i++) {
-	yield frame.frames[i]
-	yield* traverseFrames(frame.frames[i])
+	yield frame[i]
+	yield* traverseFrames(frame[i])
   }
 }
 
