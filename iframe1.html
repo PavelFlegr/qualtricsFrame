@@ -3,7 +3,7 @@
   <body>
     <script type="module">
       import * as messaging from "https://pavelflegr.github.io/qualtricsFrame/universal.mjs"
-      messaging.setScope="a"
+      messaging.setScope("a")
       messaging.subscribe("hello", console.log)
       messaging.emit("hello")
     </script>
