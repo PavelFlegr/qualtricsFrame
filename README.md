@@ -21,8 +21,9 @@ transfer - an array of Transferable, if you have a use for it (I don't)
 import * as messaging from "https://pavelflegr.github.io/qualtricsFrame/universal.mjs"
 
 messaging.setScope("a")
-messaging.subscribe("hello")
 window.onload = send
+
+messaging.subscribe("newData", (e) => console.log(e.data.data))
 
 function send() {
 	messaging.emit("hello", "fukc", "*")
