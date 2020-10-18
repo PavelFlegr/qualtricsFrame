@@ -1,5 +1,5 @@
 # qualtricsFrame
-universal.mjs is a lightweight hierarchy-independent window.postMessage wrapper. It is a subscribe-emit style API. It sends all messages to every available iframe, while still allowing usage of targetOrigin to ensure security. received messages are the same as postMessage ones.
+universal.mjs is a lightweight hierarchy-independent window.postMessage wrapper. It is a subscribe-emit style API. It sends all messages to every available iframe, while still allowing usage of targetOrigin to ensure security. received messages are the same as postMessage ones. The other files are kinda pointless
 
 exported methods:
 setScope(scope) - to avoid conflicts with other sytems using postMessage
