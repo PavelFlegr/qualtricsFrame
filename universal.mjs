@@ -33,7 +33,7 @@ function messageHandler(e) {
 }
 
 function setScope(scope) {
-	scope = scope
+	this.scope = scope
 }
 
 export {emit, subscribe, unsubscribe, setScope}
