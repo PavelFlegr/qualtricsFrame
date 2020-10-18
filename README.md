@@ -13,6 +13,7 @@ emit(message, data, targetOrigin, [transfer]) - send a message
 message - message type
 data
 targetOrigin - only send to iframes with this origin, default('*') means send to everyone
+
 transfer - an array of Transferable, if you have a use for it (I don't)
 
 # usage
