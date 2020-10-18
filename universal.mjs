@@ -1,5 +1,5 @@
 let subscriptions = new Map()
-
+let scope = ""
 addEventListener("message", messageHandler)
 
 function forEach(generator, callback) {
@@ -17,7 +17,7 @@ function* traverseFrames(frame) {
 function emit(message, data = null, targetOrigin = "*", transfer = []) {
 	let gen = traverseFrames(top)
 	gen.next()
-  forEach(gen, f => f.postMessage({message, data}, targetOrigin, transfer))
+  forEach(gen, f => f.postMessage({message, data, scope}, targetOrigin, transfer))
 }
 
 function subscribe(message, callback) {
@@ -29,7 +29,11 @@ function unsubscribe(message) {
 }
 
 function messageHandler(e) {
-	if(subscriptions.has(e.data.message)) subscriptions.get(e.data.message)({data: e.data.data, ...e})
+	if(subscriptions.has(e.data.message) && e.data.scope === scope) subscriptions.get(e.data.message)(e)
 }
 
-export {emit, subscribe, unsubscribe}
+function setScope(scope) {
+	scope = scope
+}
+
+export {emit, subscribe, unsubscribe, setScope}
