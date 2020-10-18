@@ -1,5 +1,5 @@
 let subscriptions = new Map()
-let scope = ""
+let _scope = ""
 addEventListener("message", messageHandler)
 
 function forEach(generator, callback) {
@@ -33,7 +33,7 @@ function messageHandler(e) {
 }
 
 function setScope(scope) {
-	this.scope = scope
+	_scope = scope
 }
 
 export {emit, subscribe, unsubscribe, setScope}
